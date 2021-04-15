@@ -20,9 +20,28 @@ namespace ContadorDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int conteo;
         public MainWindow()
         {
             InitializeComponent();
+            conteo = 0;
+        }
+
+        private void ContarButton_Click(object sender, RoutedEventArgs e)
+        {
+            conteo++;
+            ConteoLabel.Content = Convert.ToString(conteo);
+        }
+
+        private void ReiniciarButton_Click(object sender, RoutedEventArgs e)
+        {
+            conteo = 0;
+            ConteoLabel.Content = Convert.ToString(conteo);
+        }
+
+        private void SalirButton_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
